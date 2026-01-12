@@ -10,6 +10,13 @@ export interface ContentPage {
   htmlContent: string;
   author?: string;
   lastModified?: string;
+  // MBTI Specific Fields
+  emoji?: string;
+  color_group?: string;
+  superpowers?: string;
+  annoyances?: string;
+  relationships?: string;
+  career?: string;
   // SEO fields
   keywords?: string;
   canonical?: string;
@@ -60,6 +67,13 @@ function parseMarkdownContent(rawContent: string, lang: string, slug: string): C
     htmlContent,
     author: data.author,
     lastModified: data.lastModified,
+    // MBTI Specific Fields
+    emoji: data.emoji,
+    color_group: data.color_group,
+    superpowers: data.superpowers,
+    annoyances: data.annoyances,
+    relationships: data.relationships,
+    career: data.career,
     // SEO fields
     keywords: data.keywords,
     canonical: data.canonical,

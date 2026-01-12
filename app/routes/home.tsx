@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
 import "~/styles/clay.css";
 import LanguageSwitcher from "~/components/LanguageSwitcher";
 
@@ -31,7 +31,9 @@ const typeColors: Record<string, string> = {
 };
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { lang } = useParams();
+  const currentLang = lang || i18n.language;
 
   const mbtiTypes = [
     "INTJ", "INTP", "ENTJ", "ENTP",
@@ -99,7 +101,7 @@ export default function Home() {
           <div className="bento-grid">
             {mbtiTypes.map((type) => (
               <Link
-                to={`/types/${type}`}
+                to={`/${currentLang}/types/${type}`}
                 key={type}
                 className={`clay-card type-card ${typeColors[type]}`}
               >

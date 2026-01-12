@@ -1,44 +1,44 @@
 import { useTranslation } from "react-i18next";
-import { useParams, Link } from "react-router";
+import { useParams, Link, useLoaderData } from "react-router";
+import { getContentPage } from "~/lib/markdown";
+import type { Route } from "./+types/profile";
 import "~/styles/clay.css";
 import LanguageSwitcher from "~/components/LanguageSwitcher";
 
-// Type card color assignments
-// Type card color assignments (Semantic Groups)
-// Analysts (Lilac), Diplomats (Mint), Sentinels (Sky), Explorers (Lemon)
-const typeColors: Record<string, { bg: string; dark: string }> = {
-  // Analysts
-  INTJ: { bg: "#e2d1f9", dark: "#c9b3e6" },
-  INTP: { bg: "#e2d1f9", dark: "#c9b3e6" },
-  ENTJ: { bg: "#e2d1f9", dark: "#c9b3e6" },
-  ENTP: { bg: "#e2d1f9", dark: "#c9b3e6" },
-
-  // Diplomats
-  INFJ: { bg: "#c8f7dc", dark: "#9ee7c0" },
-  INFP: { bg: "#c8f7dc", dark: "#9ee7c0" },
-  ENFJ: { bg: "#c8f7dc", dark: "#9ee7c0" },
-  ENFP: { bg: "#c8f7dc", dark: "#9ee7c0" },
-
-  // Sentinels
-  ISTJ: { bg: "#bde0fe", dark: "#89c4f4" },
-  ISFJ: { bg: "#bde0fe", dark: "#89c4f4" },
-  ESTJ: { bg: "#bde0fe", dark: "#89c4f4" },
-  ESFJ: { bg: "#bde0fe", dark: "#89c4f4" },
-
-  // Explorers
-  ISTP: { bg: "#fef3c7", dark: "#fde68a" },
-  ISFP: { bg: "#fef3c7", dark: "#fde68a" },
-  ESTP: { bg: "#fef3c7", dark: "#fde68a" },
-  ESFP: { bg: "#fef3c7", dark: "#fde68a" },
+// Color definitions for semantic groups
+const groupColors: Record<string, { bg: string; dark: string }> = {
+  analyst: { bg: "#e2d1f9", dark: "#c9b3e6" },   // Lilac
+  diplomat: { bg: "#c8f7dc", dark: "#9ee7c0" },  // Mint
+  sentinel: { bg: "#bde0fe", dark: "#89c4f4" },  // Sky
+  explorer: { bg: "#fef3c7", dark: "#fde68a" },  // Lemon
 };
 
-export default function TypePage() {
-  const { type } = useParams();
+export async function loader({ params }: Route.LoaderArgs) {
+  const { type, lang = "en" } = params;
+  if (!type) throw new Response("Type not found", { status: 404 });
+
+  // Fetch content from Markdown
+  const page = getContentPage(lang, `types/${type}`);
+
+  return { page, type, lang };
+}
+
+export default function TypePage({ loaderData }: Route.ComponentProps) {
+  const { page, type, lang } = loaderData;
   const { t } = useTranslation();
 
-  const colors = typeColors[type as string] || { bg: "#e2d1f9", dark: "#c9b3e6" };
-  const typeName = t(`types.${type}.name`);
-  const typeEmoji = t(`types.${type}.emoji`);
+  // Fallback defaults if markdown is missing/incomplete
+  const colors = (page?.color_group && groupColors[page.color_group]) || groupColors.analyst;
+  const typeName = page?.title || type;
+  const typeEmoji = page?.emoji || "✨";
+
+  const content = page || {
+    superpowers: "",
+    annoyances: "",
+    relationships: "",
+    career: "",
+    htmlContent: ""
+  };
 
   return (
     <div className="min-h-screen relative overflow-hidden" style={{ fontFamily: "'Nunito', sans-serif" }}>
@@ -54,7 +54,7 @@ export default function TypePage() {
       <nav className="relative z-10 py-6 px-6">
         <div className="container mx-auto max-w-4xl flex items-center justify-between">
           <Link
-            to="/"
+            to={`/${lang}`}
             className="clay-card px-5 py-3 flex items-center gap-2 hover:scale-105 transition-transform"
             style={{ background: 'white', textDecoration: 'none' }}
           >
@@ -88,6 +88,14 @@ export default function TypePage() {
             <p className="clay-text text-2xl font-semibold" style={{ color: 'var(--text-secondary)' }}>
               {typeName}
             </p>
+
+            {/* Main Description from Markdown Body */}
+            {content.htmlContent && (
+              <div
+                className="clay-text text-lg mt-6 max-w-2xl mx-auto prose prose-lg dark:prose-invert"
+                dangerouslySetInnerHTML={{ __html: content.htmlContent }}
+              />
+            )}
           </header>
 
           {/* Trait Progress Bars */}
@@ -167,15 +175,14 @@ export default function TypePage() {
             </div>
           </section>
 
-          {/* Story-like Blocks */}
+          {/* Story-like Blocks from Markdown Frontmatter */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {/* Superpowers */}
             <div className="clay-card p-8" style={{ background: `linear-gradient(145deg, ${colors.bg}40, white)` }}>
               <div className="emoji-block-icon text-4xl mb-4">💪</div>
               <h2 className="clay-heading text-xl mb-4">{t("sections.superpowers")}</h2>
               <p className="clay-text">
-                {type} types are known for their exceptional analytical abilities and strategic thinking.
-                They excel at seeing the big picture while managing complex details.
+                {content.superpowers || "Content coming soon..."}
               </p>
             </div>
 
@@ -184,8 +191,7 @@ export default function TypePage() {
               <div className="emoji-block-icon text-4xl mb-4">😤</div>
               <h2 className="clay-heading text-xl mb-4">{t("sections.annoyances")}</h2>
               <p className="clay-text">
-                Inefficiency and illogical decisions can frustrate {type} personalities.
-                They prefer well-thought-out plans over spontaneous chaos.
+                {content.annoyances || "Content coming soon..."}
               </p>
             </div>
 
@@ -194,8 +200,7 @@ export default function TypePage() {
               <div className="emoji-block-icon text-4xl mb-4">❤️</div>
               <h2 className="clay-heading text-xl mb-4">{t("sections.relationships")}</h2>
               <p className="clay-text">
-                In relationships, {type} individuals value deep intellectual connection and loyalty.
-                They seek partners who appreciate their unique perspective.
+                {content.relationships || "Content coming soon..."}
               </p>
             </div>
 
@@ -204,15 +209,14 @@ export default function TypePage() {
               <div className="emoji-block-icon text-4xl mb-4">💼</div>
               <h2 className="clay-heading text-xl mb-4">{t("sections.career")}</h2>
               <p className="clay-text">
-                {type} types thrive in roles that require problem-solving and innovation.
-                They make excellent strategists, architects, and leaders.
+                {content.career || "Content coming soon..."}
               </p>
             </div>
           </div>
 
           {/* Back to All Types */}
           <div className="text-center">
-            <Link to="/">
+            <Link to={`/${lang}`}>
               <button className="clay-button">
                 🏠 {t("hero.badge") || "Explore All Types"}
               </button>

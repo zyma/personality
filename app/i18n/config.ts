@@ -25,7 +25,8 @@ if (!i18n.isInitialized) {
         escapeValue: false,
       },
       detection: {
-        order: ['querystring', 'cookie', 'localStorage', 'navigator', 'path', 'subdomain'],
+        order: ['path', 'querystring', 'cookie', 'localStorage', 'navigator'],
+        lookupFromPathIndex: 0,
         caches: ['localStorage', 'cookie'],
       }
     });

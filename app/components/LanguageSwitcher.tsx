@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from "react";
+import { useLocation, useNavigate, useParams } from "react-router";
 
 const languages = [
     { code: "en", name: "English", flag: "🇺🇸" },
@@ -16,10 +17,28 @@ export default function LanguageSwitcher() {
 
     const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
 
+    const location = useLocation();
+    const navigate = useNavigate();
+    const params = useParams();
+
     const changeLanguage = (code: string) => {
         i18n.changeLanguage(code);
         setIsOpen(false);
-        // Stays on the same page, just changes the language context
+
+        // Construct new path
+        const currentPath = location.pathname;
+        const segments = currentPath.split('/').filter(Boolean);
+
+        // If the first segment is a language code, replace it
+        if (languages.some(l => l.code === segments[0])) {
+            segments[0] = code;
+        } else {
+            // Otherwise prepend it (though we should always have it now)
+            segments.unshift(code);
+        }
+
+        const newPath = `/${segments.join('/')}${location.search}${location.hash}`;
+        navigate(newPath);
     };
 
     // Close dropdown when clicking outside

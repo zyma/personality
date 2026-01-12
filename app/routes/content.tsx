@@ -78,13 +78,13 @@ export default function ContentPage({ loaderData }: Route.ComponentProps) {
             {/* Navigation */}
             <nav className="border-b border-[#e5e0d8] dark:border-[#2d2d2d] bg-white/50 dark:bg-black/50 backdrop-blur-xl sticky top-0 z-50">
                 <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2 text-[#6366f1] font-bold hover:opacity-80 transition-opacity">
+                    <Link to={`/${lang}`} className="flex items-center gap-2 text-[#6366f1] font-bold hover:opacity-80 transition-opacity">
                         <ArrowLeft className="w-5 h-5" />
                         Back to Wiki
                     </Link>
                     <span className="font-serif italic font-bold text-xl">{page.title}</span>
                 </div>
-            </nav>
+            </nav >
 
             <main className="container mx-auto px-6 py-16 max-w-4xl">
                 {/* Header */}
@@ -129,7 +129,7 @@ export default function ContentPage({ loaderData }: Route.ComponentProps) {
                     </p>
                 </div>
             </footer>
-        </div>
+        </div >
     );
 }
 
@@ -139,15 +139,15 @@ function NotFoundPage({ lang }: { lang: string }) {
             {/* Navigation */}
             <nav className="border-b border-[#e5e0d8] dark:border-[#2d2d2d] bg-white/50 dark:bg-black/50 backdrop-blur-xl">
                 <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2 text-[#6366f1] font-bold hover:opacity-80 transition-opacity">
+                    <Link to={`/${lang}`} className="flex items-center gap-2 text-[#6366f1] font-bold hover:opacity-80 transition-opacity">
                         <ArrowLeft className="w-5 h-5" />
                         Back to Wiki
                     </Link>
                 </div>
-            </nav>
+            </nav >
 
             {/* 404 Content */}
-            <main className="flex-1 flex items-center justify-center px-6">
+            < main className="flex-1 flex items-center justify-center px-6" >
                 <div className="text-center max-w-xl">
                     <div className="text-9xl font-serif font-black text-[#6366f1] mb-8 opacity-20">
                         404
@@ -174,16 +174,16 @@ function NotFoundPage({ lang }: { lang: string }) {
                         </Link>
                     </div>
                 </div>
-            </main>
+            </main >
 
             {/* Footer */}
-            <footer className="border-t border-[#e5e0d8] dark:border-[#2d2d2d] py-8 bg-white dark:bg-[#0a0a0a]">
+            < footer className="border-t border-[#e5e0d8] dark:border-[#2d2d2d] py-8 bg-white dark:bg-[#0a0a0a]" >
                 <div className="container mx-auto px-6 text-center">
                     <p className="text-[#999] text-sm font-medium tracking-wide">
                         © 2026 MBTI GLOBAL WIKI
                     </p>
                 </div>
-            </footer>
-        </div>
+            </footer >
+        </div >
     );
 }
