@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Globe, BookOpen, Users, Info } from "lucide-react";
+import { Globe, BookOpen, Info, Sparkles } from "lucide-react";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -24,25 +24,27 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#faf9f6] text-[#2d2d2d] dark:bg-[#121212] dark:text-[#e0e0e0]">
       {/* Navigation */}
-      <nav className="border-b bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BookOpen className="w-6 h-6 text-blue-600" />
-            <span className="font-bold text-xl tracking-tight">MBTI Wiki</span>
+      <nav className="border-b border-[#e5e0d8] dark:border-[#2d2d2d] bg-white/50 dark:bg-black/50 backdrop-blur-xl sticky top-0 z-50">
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-[#6366f1] rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+              <Sparkles className="w-6 h-6 text-white" />
+            </div>
+            <span className="font-bold text-2xl tracking-tight font-serif italic text-[#1a1a1a] dark:text-white">MBTI Wiki</span>
           </div>
           
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 text-sm font-medium">
-              <Globe className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-sm font-medium bg-[#f0ede6] dark:bg-[#1e1e1e] px-3 py-1.5 rounded-full border border-[#e5e0d8] dark:border-[#333]">
+              <Globe className="w-4 h-4 text-[#666]" />
               <select 
                 onChange={(e) => changeLanguage(e.target.value)}
                 value={i18n.language}
-                className="bg-transparent border-none focus:ring-0 cursor-pointer"
+                className="bg-transparent border-none focus:ring-0 cursor-pointer appearance-none pr-1"
               >
                 {languages.map((lang) => (
-                  <option key={lang.code} value={lang.code}>{lang.name}</option>
+                  <option key={lang.code} value={lang.code} className="bg-white dark:bg-[#1e1e1e]">{lang.name}</option>
                 ))}
               </select>
             </div>
@@ -50,66 +52,88 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="container mx-auto px-4 py-12 max-w-6xl">
-        <header className="mb-16 text-center">
-          <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+      <main className="container mx-auto px-6 py-16 max-w-7xl">
+        <header className="mb-20">
+          <div className="flex items-center gap-2 text-[#6366f1] font-bold tracking-widest text-xs uppercase mb-4">
+             <span className="w-8 h-[1px] bg-[#6366f1]"></span>
+             The Definitive Guide
+          </div>
+          <h1 className="text-6xl md:text-7xl font-serif font-black mb-8 leading-tight max-w-4xl text-[#1a1a1a] dark:text-white">
             {t("welcome")}
           </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#666] dark:text-[#a0a0a0] max-w-2xl leading-relaxed border-l-4 border-[#6366f1] pl-6 italic">
             {t("description")}
           </p>
         </header>
 
-        <section className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <aside className="md:col-span-1 space-y-8">
-            <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
-              <h2 className="font-bold mb-4 flex items-center gap-2">
-                <Info className="w-4 h-4" />
-                Quick Links
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Main Content Area */}
+          <div className="lg:col-span-9">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              {mbtiTypes.map((type) => (
+                <div 
+                  key={type}
+                  className="group relative aspect-square bg-white dark:bg-[#1e1e1e] p-8 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none border border-[#e5e0d8] dark:border-[#2d2d2d] hover:border-[#6366f1] dark:hover:border-[#6366f1] hover:-translate-y-2 transition-all duration-500 cursor-pointer flex flex-col justify-between"
+                >
+                  <div className="flex justify-between items-start">
+                    <span className="text-4xl font-serif font-black text-[#1a1a1a] dark:text-white group-hover:text-[#6366f1] transition-colors">
+                      {type}
+                    </span>
+                    <div className="w-2 h-2 rounded-full bg-[#6366f1] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#999] dark:text-[#666] mb-1 block group-hover:text-[#6366f1] transition-colors">
+                      {t(`types.${type}`)}
+                    </span>
+                    <div className="w-6 h-[2px] bg-[#e5e0d8] dark:bg-[#333] group-hover:bg-[#6366f1] group-hover:w-full transition-all duration-500"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <aside className="lg:col-span-3 space-y-10">
+            <div className="bg-[#f0ede6] dark:bg-[#1e1e1e] p-8 rounded-3xl border border-[#e5e0d8] dark:border-[#2d2d2d]">
+              <h2 className="font-serif font-bold text-xl mb-6 flex items-center gap-2 text-[#1a1a1a] dark:text-white">
+                <Info className="w-5 h-5 text-[#6366f1]" />
+                Exploration
               </h2>
-              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">What is MBTI?</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Test Basics</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Type Relationships</li>
+              <ul className="space-y-4">
+                {["What is MBTI?", "Test Basics", "Type Relationships", "The 8 Functions"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 group cursor-pointer">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1] group-hover:scale-150 transition-transform"></span>
+                    <span className="text-sm font-medium text-[#666] dark:text-[#a0a0a0] group-hover:text-[#1a1a1a] dark:group-hover:text-white transition-colors">
+                      {item}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
-            
-            <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-2xl border border-blue-100 dark:border-blue-800/50">
-              <h2 className="font-bold mb-2 flex items-center gap-2 text-blue-900 dark:text-blue-100">
-                <Users className="w-4 h-4" />
-                Community
-              </h2>
-              <p className="text-sm text-blue-800 dark:text-blue-200/70 mb-4">
-                Join our international community of personality enthusiasts.
+
+            <div className="p-8 rounded-3xl bg-[#6366f1] text-white shadow-xl shadow-indigo-500/20">
+              <BookOpen className="w-8 h-8 mb-4 opacity-50" />
+              <h2 className="font-serif font-bold text-xl mb-3">Learn More</h2>
+              <p className="text-sm text-indigo-100 leading-relaxed mb-6 opacity-80">
+                Dive deep into the psychology behind personality types and human behavior.
               </p>
-              <button className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-colors text-sm font-semibold">
-                Join Discussion
+              <button className="w-full py-3 bg-white text-[#6366f1] rounded-2xl hover:bg-[#fafafa] transition-colors text-sm font-bold uppercase tracking-wider">
+                Start Learning
               </button>
             </div>
           </aside>
-
-          <div className="md:col-span-3 grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {mbtiTypes.map((type) => (
-              <div 
-                key={type}
-                className="group bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col items-center text-center"
-              >
-                <span className="text-2xl font-black mb-2 text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition-colors">
-                  {type}
-                </span>
-                <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">
-                  {t(`types.${type}`)}
-                </span>
-                <div className="w-8 h-1 bg-slate-100 dark:bg-slate-800 rounded-full group-hover:bg-blue-600 group-hover:w-12 transition-all"></div>
-              </div>
-            ))}
-          </div>
-        </section>
+        </div>
       </main>
 
-      <footer className="mt-24 border-t border-slate-200 dark:border-slate-800 py-12 bg-white dark:bg-slate-950">
-        <div className="container mx-auto px-4 text-center text-slate-500 text-sm">
-          <p>© 2026 MBTI Wiki. Built with React Router 7.</p>
+      <footer className="mt-32 border-t border-[#e5e0d8] dark:border-[#2d2d2d] py-16 bg-white dark:bg-[#0a0a0a]">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex items-center gap-3 grayscale opacity-50">
+             <Sparkles className="w-5 h-5" />
+             <span className="font-bold text-lg tracking-tight font-serif italic">MBTI Wiki</span>
+          </div>
+          <p className="text-[#999] text-sm font-medium tracking-wide">
+            © 2026 MBTI GLOBAL WIKI • ELEGANCE IN PERSONALITY
+          </p>
         </div>
       </footer>
     </div>
