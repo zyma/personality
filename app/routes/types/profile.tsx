@@ -1,63 +1,225 @@
 import { useTranslation } from "react-i18next";
 import { useParams, Link } from "react-router";
-import { ArrowLeft, Brain, Target, Heart, Briefcase } from "lucide-react";
+import "~/styles/clay.css";
+import LanguageSwitcher from "~/components/LanguageSwitcher";
+
+// Type card color assignments
+const typeColors: Record<string, { bg: string; dark: string }> = {
+  INTJ: { bg: "#e2d1f9", dark: "#c9b3e6" },
+  INTP: { bg: "#bde0fe", dark: "#89c4f4" },
+  ENTJ: { bg: "#ffb5a7", dark: "#ff9080" },
+  ENTP: { bg: "#fef3c7", dark: "#fde68a" },
+  INFJ: { bg: "#e2d1f9", dark: "#c9b3e6" },
+  INFP: { bg: "#ffc8dd", dark: "#f9a8c2" },
+  ENFJ: { bg: "#ffd8be", dark: "#ffb088" },
+  ENFP: { bg: "#fef3c7", dark: "#fde68a" },
+  ISTJ: { bg: "#d4e09b", dark: "#c5d17c" },
+  ISFJ: { bg: "#c8f7dc", dark: "#9ee7c0" },
+  ESTJ: { bg: "#ffb5a7", dark: "#ff9080" },
+  ESFJ: { bg: "#ffd8be", dark: "#ffb088" },
+  ISTP: { bg: "#bde0fe", dark: "#89c4f4" },
+  ISFP: { bg: "#ffc8dd", dark: "#f9a8c2" },
+  ESTP: { bg: "#c8f7dc", dark: "#9ee7c0" },
+  ESFP: { bg: "#d4e09b", dark: "#c5d17c" },
+};
 
 export default function TypePage() {
   const { type } = useParams();
   const { t } = useTranslation();
 
+  const colors = typeColors[type as string] || { bg: "#e2d1f9", dark: "#c9b3e6" };
+  const typeName = t(`types.${type}.name`);
+  const typeEmoji = t(`types.${type}.emoji`);
+
   return (
-    <div className="min-h-screen bg-[#faf9f6] text-[#2d2d2d] dark:bg-[#121212] dark:text-[#e0e0e0]">
-      <nav className="border-b border-[#e5e0d8] dark:border-[#2d2d2d] bg-white/50 dark:bg-black/50 backdrop-blur-xl sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-[#6366f1] font-bold hover:opacity-80 transition-opacity">
-            <ArrowLeft className="w-5 h-5" />
-            Back to Wiki
+    <div className="min-h-screen relative overflow-hidden" style={{ fontFamily: "'Nunito', sans-serif" }}>
+      {/* Aurora Background */}
+      <div className="aurora-bg">
+        <div className="aurora-blob aurora-blob-1"></div>
+        <div className="aurora-blob aurora-blob-2"></div>
+        <div className="aurora-blob aurora-blob-3"></div>
+        <div className="aurora-blob aurora-blob-4"></div>
+      </div>
+
+      {/* Navigation */}
+      <nav className="relative z-10 py-6 px-6">
+        <div className="container mx-auto max-w-4xl flex items-center justify-between">
+          <Link
+            to="/"
+            className="clay-card px-5 py-3 flex items-center gap-2 hover:scale-105 transition-transform"
+            style={{ background: 'white', textDecoration: 'none' }}
+          >
+            <span className="text-xl">←</span>
+            <span className="font-bold" style={{ color: 'var(--text-primary)' }}>
+              MBTI Wiki
+            </span>
           </Link>
-          <span className="font-serif italic font-bold text-xl">{type} Profile</span>
+
+          {/* Language Selector */}
+          <LanguageSwitcher />
         </div>
       </nav>
 
-      <main className="container mx-auto px-6 py-16 max-w-4xl">
-        <header className="mb-16">
-          <h1 className="text-6xl font-serif font-black mb-4 text-[#1a1a1a] dark:text-white uppercase tracking-tight">
-            {type}: {t(`types.${type}`)}
-          </h1>
-          <div className="w-24 h-1.5 bg-[#6366f1] rounded-full"></div>
-        </header>
+      <main className="relative z-10 px-6 pb-20">
+        <div className="container mx-auto max-w-4xl">
+          {/* Hero Header */}
+          <header className="text-center py-12">
+            {/* Large Character Emoji */}
+            <div
+              className="clay-card w-32 h-32 mx-auto mb-8 flex items-center justify-center"
+              style={{ background: `linear-gradient(145deg, ${colors.bg}, ${colors.dark})` }}
+            >
+              <span className="text-6xl">{typeEmoji}</span>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white dark:bg-[#1e1e1e] p-8 rounded-3xl border border-[#e5e0d8] dark:border-[#2d2d2d]">
-            <Brain className="w-8 h-8 text-[#6366f1] mb-4" />
-            <h2 className="text-xl font-serif font-bold mb-3">Core Strengths</h2>
-            <p className="text-[#666] dark:text-[#a0a0a0] leading-relaxed">
-              Description of {type}'s key strengths and mental processing patterns goes here.
+            {/* Type Code */}
+            <h1 className="clay-heading text-6xl md:text-7xl mb-4">{type}</h1>
+
+            {/* Type Name */}
+            <p className="clay-text text-2xl font-semibold" style={{ color: 'var(--text-secondary)' }}>
+              {typeName}
             </p>
+          </header>
+
+          {/* Trait Progress Bars */}
+          <section className="mb-12">
+            <div className="clay-card p-8" style={{ background: 'white' }}>
+              <h2 className="clay-heading text-xl mb-6">🧬 {t("sections.superpowers") || "Personality Traits"}</h2>
+
+              <div className="space-y-6">
+                {/* Introversion/Extraversion */}
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Introversion</span>
+                    <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Extraversion</span>
+                  </div>
+                  <div className="puffy-progress">
+                    <div
+                      className="puffy-progress-fill"
+                      style={{
+                        width: type?.startsWith('E') ? '75%' : '25%',
+                        background: `linear-gradient(145deg, ${colors.bg}, ${colors.dark})`
+                      }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Sensing/Intuition */}
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Sensing</span>
+                    <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Intuition</span>
+                  </div>
+                  <div className="puffy-progress">
+                    <div
+                      className="puffy-progress-fill"
+                      style={{
+                        width: type?.includes('N') ? '70%' : '30%',
+                        background: `linear-gradient(145deg, var(--clay-sky), var(--clay-sky-dark))`
+                      }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Thinking/Feeling */}
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Thinking</span>
+                    <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Feeling</span>
+                  </div>
+                  <div className="puffy-progress">
+                    <div
+                      className="puffy-progress-fill"
+                      style={{
+                        width: type?.includes('F') ? '65%' : '35%',
+                        background: `linear-gradient(145deg, var(--clay-pink), var(--clay-pink-dark))`
+                      }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Judging/Perceiving */}
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Judging</span>
+                    <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Perceiving</span>
+                  </div>
+                  <div className="puffy-progress">
+                    <div
+                      className="puffy-progress-fill"
+                      style={{
+                        width: type?.endsWith('P') ? '70%' : '30%',
+                        background: `linear-gradient(145deg, var(--clay-lemon), var(--clay-lemon-dark))`
+                      }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Story-like Blocks */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {/* Superpowers */}
+            <div className="clay-card p-8" style={{ background: `linear-gradient(145deg, ${colors.bg}40, white)` }}>
+              <div className="emoji-block-icon text-4xl mb-4">💪</div>
+              <h2 className="clay-heading text-xl mb-4">{t("sections.superpowers")}</h2>
+              <p className="clay-text">
+                {type} types are known for their exceptional analytical abilities and strategic thinking.
+                They excel at seeing the big picture while managing complex details.
+              </p>
+            </div>
+
+            {/* Annoyances */}
+            <div className="clay-card p-8" style={{ background: `linear-gradient(145deg, var(--clay-coral)40, white)` }}>
+              <div className="emoji-block-icon text-4xl mb-4">😤</div>
+              <h2 className="clay-heading text-xl mb-4">{t("sections.annoyances")}</h2>
+              <p className="clay-text">
+                Inefficiency and illogical decisions can frustrate {type} personalities.
+                They prefer well-thought-out plans over spontaneous chaos.
+              </p>
+            </div>
+
+            {/* Relationships */}
+            <div className="clay-card p-8" style={{ background: `linear-gradient(145deg, var(--clay-pink)40, white)` }}>
+              <div className="emoji-block-icon text-4xl mb-4">❤️</div>
+              <h2 className="clay-heading text-xl mb-4">{t("sections.relationships")}</h2>
+              <p className="clay-text">
+                In relationships, {type} individuals value deep intellectual connection and loyalty.
+                They seek partners who appreciate their unique perspective.
+              </p>
+            </div>
+
+            {/* Career */}
+            <div className="clay-card p-8" style={{ background: `linear-gradient(145deg, var(--clay-mint)40, white)` }}>
+              <div className="emoji-block-icon text-4xl mb-4">💼</div>
+              <h2 className="clay-heading text-xl mb-4">{t("sections.career")}</h2>
+              <p className="clay-text">
+                {type} types thrive in roles that require problem-solving and innovation.
+                They make excellent strategists, architects, and leaders.
+              </p>
+            </div>
           </div>
-          <div className="bg-white dark:bg-[#1e1e1e] p-8 rounded-3xl border border-[#e5e0d8] dark:border-[#2d2d2d]">
-            <Target className="w-8 h-8 text-[#6366f1] mb-4" />
-            <h2 className="text-xl font-serif font-bold mb-3">Growth Areas</h2>
-            <p className="text-[#666] dark:text-[#a0a0a0] leading-relaxed">
-              Potential challenges and development paths for the {type} personality.
-            </p>
+
+          {/* Back to All Types */}
+          <div className="text-center">
+            <Link to="/">
+              <button className="clay-button">
+                🏠 {t("hero.badge") || "Explore All Types"}
+              </button>
+            </Link>
           </div>
         </div>
-
-        <section className="prose prose-slate dark:prose-invert max-w-none space-y-12 text-lg leading-relaxed text-[#444] dark:text-[#bbb]">
-          <div>
-            <h3 className="text-2xl font-serif font-bold text-[#1a1a1a] dark:text-white mb-4 flex items-center gap-2">
-              <Heart className="w-6 h-6 text-red-400" /> Relationships
-            </h3>
-            <p>Details about how {type} interacts with others, their communication style, and ideal partners.</p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-serif font-bold text-[#1a1a1a] dark:text-white mb-4 flex items-center gap-2">
-              <Briefcase className="w-6 h-6 text-orange-400" /> Career Path
-            </h3>
-            <p>Work environments where {type} individuals typically thrive and common professional roles.</p>
-          </div>
-        </section>
       </main>
+
+      {/* Footer */}
+      <footer className="relative z-10 py-12 text-center">
+        <div className="container mx-auto px-6">
+          <p className="clay-text text-sm">
+            © 2026 MBTI Wiki • Made with 💜
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -1,23 +1,83 @@
 {
   "welcome": "Willkommen bei MBTI Wiki",
-  "description": "Entdecken Sie Ihren Persönlichkeitstyp und verstehen Sie sich selbst besser.",
-  "selectLanguage": "Sprache auswählen",
+  "description": "Entdecke deinen Persönlichkeitstyp und verstehe dich selbst besser.",
+  "selectLanguage": "Sprache wählen",
+  "hero": {
+    "badge": "Persönlichkeit entdecken",
+    "title": "Entdecke woraus du gemacht bist",
+    "subtitle": "Finde deinen Persönlichkeitstyp und enthülle die Geheimnisse, wer du wirklich bist",
+    "cta": "Wer bin ich?"
+  },
+  "sections": {
+    "superpowers": "Deine Superkräfte",
+    "annoyances": "Was dich nervt",
+    "relationships": "In Beziehungen",
+    "career": "Karriere"
+  },
   "types": {
-    "INTJ": "Architekt",
-    "INTP": "Logiker",
-    "ENTJ": "Kommandeur",
-    "ENTP": "Debattierer",
-    "INFJ": "Advokat",
-    "INFP": "Mittler",
-    "ENFJ": "Protagonist",
-    "ENFP": "Aktivist",
-    "ISTJ": "Logistiker",
-    "ISFJ": "Verteidiger",
-    "ESTJ": "Exekutive",
-    "ESFJ": "Konsul",
-    "ISTP": "Virtuose",
-    "ISFP": "Abenteurer",
-    "ESTP": "Unternehmer",
-    "ESFP": "Entertainer"
+    "INTJ": {
+      "name": "Architekt",
+      "emoji": "🏗️"
+    },
+    "INTP": {
+      "name": "Logiker",
+      "emoji": "🔬"
+    },
+    "ENTJ": {
+      "name": "Kommandeur",
+      "emoji": "👑"
+    },
+    "ENTP": {
+      "name": "Debattierer",
+      "emoji": "💡"
+    },
+    "INFJ": {
+      "name": "Advokat",
+      "emoji": "🌙"
+    },
+    "INFP": {
+      "name": "Mediator",
+      "emoji": "🦋"
+    },
+    "ENFJ": {
+      "name": "Protagonist",
+      "emoji": "🌟"
+    },
+    "ENFP": {
+      "name": "Aktivist",
+      "emoji": "🎉"
+    },
+    "ISTJ": {
+      "name": "Logistiker",
+      "emoji": "📋"
+    },
+    "ISFJ": {
+      "name": "Verteidiger",
+      "emoji": "🛡️"
+    },
+    "ESTJ": {
+      "name": "Exekutive",
+      "emoji": "📊"
+    },
+    "ESFJ": {
+      "name": "Konsul",
+      "emoji": "🤝"
+    },
+    "ISTP": {
+      "name": "Virtuose",
+      "emoji": "🔧"
+    },
+    "ISFP": {
+      "name": "Abenteurer",
+      "emoji": "🎨"
+    },
+    "ESTP": {
+      "name": "Unternehmer",
+      "emoji": "🚀"
+    },
+    "ESFP": {
+      "name": "Entertainer",
+      "emoji": "🎭"
+    }
   }
 }

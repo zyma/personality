@@ -2,22 +2,82 @@
   "welcome": "Welcome to MBTI Wiki",
   "description": "Discover your personality type and understand yourself better.",
   "selectLanguage": "Select Language",
+  "hero": {
+    "badge": "Personality Discovery",
+    "title": "Discover What You're Made Of",
+    "subtitle": "Find your personality type and unlock the secrets of who you really are",
+    "cta": "Who Am I?"
+  },
+  "sections": {
+    "superpowers": "Your Superpowers",
+    "annoyances": "What Annoys You",
+    "relationships": "In Relationships",
+    "career": "Career Path"
+  },
   "types": {
-    "INTJ": "Architect",
-    "INTP": "Logician",
-    "ENTJ": "Commander",
-    "ENTP": "Debater",
-    "INFJ": "Advocate",
-    "INFP": "Mediator",
-    "ENFJ": "Protagonist",
-    "ENFP": "Campaigner",
-    "ISTJ": "Logistician",
-    "ISFJ": "Defender",
-    "ESTJ": "Executive",
-    "ESFJ": "Consul",
-    "ISTP": "Virtuoso",
-    "ISFP": "Adventurer",
-    "ESTP": "Entrepreneur",
-    "ESFP": "Performer"
+    "INTJ": {
+      "name": "Architect",
+      "emoji": "🏗️"
+    },
+    "INTP": {
+      "name": "Logician",
+      "emoji": "🔬"
+    },
+    "ENTJ": {
+      "name": "Commander",
+      "emoji": "👑"
+    },
+    "ENTP": {
+      "name": "Debater",
+      "emoji": "💡"
+    },
+    "INFJ": {
+      "name": "Advocate",
+      "emoji": "🌙"
+    },
+    "INFP": {
+      "name": "Mediator",
+      "emoji": "🦋"
+    },
+    "ENFJ": {
+      "name": "Protagonist",
+      "emoji": "🌟"
+    },
+    "ENFP": {
+      "name": "Campaigner",
+      "emoji": "🎉"
+    },
+    "ISTJ": {
+      "name": "Logistician",
+      "emoji": "📋"
+    },
+    "ISFJ": {
+      "name": "Defender",
+      "emoji": "🛡️"
+    },
+    "ESTJ": {
+      "name": "Executive",
+      "emoji": "📊"
+    },
+    "ESFJ": {
+      "name": "Consul",
+      "emoji": "🤝"
+    },
+    "ISTP": {
+      "name": "Virtuoso",
+      "emoji": "🔧"
+    },
+    "ISFP": {
+      "name": "Adventurer",
+      "emoji": "🎨"
+    },
+    "ESTP": {
+      "name": "Entrepreneur",
+      "emoji": "🚀"
+    },
+    "ESFP": {
+      "name": "Performer",
+      "emoji": "🎭"
+    }
   }
 }

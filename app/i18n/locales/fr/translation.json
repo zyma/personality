@@ -1,23 +1,83 @@
 {
   "welcome": "Bienvenue sur MBTI Wiki",
-  "description": "Découvrez votre type de personnalité et apprenez à mieux vous connaître.",
+  "description": "Découvrez votre type de personnalité et comprenez-vous mieux.",
   "selectLanguage": "Choisir la langue",
+  "hero": {
+    "badge": "Découverte de soi",
+    "title": "Découvre de quoi tu es fait",
+    "subtitle": "Trouve ton type de personnalité et dévoile les secrets de qui tu es vraiment",
+    "cta": "Qui suis-je?"
+  },
+  "sections": {
+    "superpowers": "Tes super-pouvoirs",
+    "annoyances": "Ce qui t'énerve",
+    "relationships": "En couple",
+    "career": "Carrière"
+  },
   "types": {
-    "INTJ": "Architecte",
-    "INTP": "Logicien",
-    "ENTJ": "Commandant",
-    "ENTP": "Innovateur",
-    "INFJ": "Avocat",
-    "INFP": "Médiateur",
-    "ENFJ": "Protagoniste",
-    "ENFP": "Inspirateur",
-    "ISTJ": "Logisticien",
-    "ISFJ": "Défenseur",
-    "ESTJ": "Directeur",
-    "ESFJ": "Consul",
-    "ISTP": "Virtuose",
-    "ISFP": "Aventurier",
-    "ESTP": "Entrepreneur",
-    "ESFP": "Amuseur"
+    "INTJ": {
+      "name": "Architecte",
+      "emoji": "🏗️"
+    },
+    "INTP": {
+      "name": "Logicien",
+      "emoji": "🔬"
+    },
+    "ENTJ": {
+      "name": "Commandant",
+      "emoji": "👑"
+    },
+    "ENTP": {
+      "name": "Innovateur",
+      "emoji": "💡"
+    },
+    "INFJ": {
+      "name": "Avocat",
+      "emoji": "🌙"
+    },
+    "INFP": {
+      "name": "Médiateur",
+      "emoji": "🦋"
+    },
+    "ENFJ": {
+      "name": "Protagoniste",
+      "emoji": "🌟"
+    },
+    "ENFP": {
+      "name": "Inspirateur",
+      "emoji": "🎉"
+    },
+    "ISTJ": {
+      "name": "Logisticien",
+      "emoji": "📋"
+    },
+    "ISFJ": {
+      "name": "Défenseur",
+      "emoji": "🛡️"
+    },
+    "ESTJ": {
+      "name": "Directeur",
+      "emoji": "📊"
+    },
+    "ESFJ": {
+      "name": "Consul",
+      "emoji": "🤝"
+    },
+    "ISTP": {
+      "name": "Virtuose",
+      "emoji": "🔧"
+    },
+    "ISFP": {
+      "name": "Aventurier",
+      "emoji": "🎨"
+    },
+    "ESTP": {
+      "name": "Entrepreneur",
+      "emoji": "🚀"
+    },
+    "ESFP": {
+      "name": "Amuseur",
+      "emoji": "🎭"
+    }
   }
 }
