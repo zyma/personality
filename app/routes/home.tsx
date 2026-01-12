@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Globe, BookOpen, Info, Sparkles } from "lucide-react";
+import { Link } from "react-router";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -71,7 +72,8 @@ export default function Home() {
           <div className="lg:col-span-9">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {mbtiTypes.map((type) => (
-                <div 
+                <Link 
+                  to={`/types/${type}`}
                   key={type}
                   className="group relative aspect-square bg-white dark:bg-[#1e1e1e] p-8 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none border border-[#e5e0d8] dark:border-[#2d2d2d] hover:border-[#6366f1] dark:hover:border-[#6366f1] hover:-translate-y-2 transition-all duration-500 cursor-pointer flex flex-col justify-between"
                 >
@@ -87,7 +89,7 @@ export default function Home() {
                     </span>
                     <div className="w-6 h-[2px] bg-[#e5e0d8] dark:bg-[#333] group-hover:bg-[#6366f1] group-hover:w-full transition-all duration-500"></div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -139,3 +141,4 @@ export default function Home() {
     </div>
   );
 }
+
