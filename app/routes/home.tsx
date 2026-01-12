@@ -2,6 +2,18 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router";
 import "~/styles/clay.css";
 import LanguageSwitcher from "~/components/LanguageSwitcher";
+import type { Route } from "./+types/home";
+
+export const meta: Route.MetaFunction = () => {
+  return [
+    { title: "MBTI Personality Types: Discover Who You Are | 16 Personalities" },
+    { name: "description", content: "Explore the 16 MBTI personality types. Take the test and understand your strengths, relationships, and career paths. Simple, fun, and accurate." },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { property: "og:title", content: "MBTI Personality Types: Discover Who You Are" },
+    { property: "og:description", content: "Explore the 16 MBTI personality types and understand your potential." },
+    { property: "og:type", content: "website" },
+  ];
+};
 
 // Type card color assignments (Semantic Groups)
 const typeColors: Record<string, string> = {
@@ -84,8 +96,16 @@ export default function Home() {
           </h1>
 
           {/* Subtitle */}
-          <p className="clay-text text-lg md:text-xl max-w-2xl mx-auto mb-10">
+          <p className="clay-text text-lg md:text-xl max-w-2xl mx-auto mb-6">
             {t("hero.subtitle")}
+          </p>
+
+          {/* SEO Content Injection */}
+          <p className="clay-text text-base max-w-3xl mx-auto mb-10 opacity-90">
+            Welcome to the ultimate guide to the <strong>16 MBTI personality types</strong>.
+            Understanding your type—whether you are an <em>Introvert</em> or <em>Extrovert</em>—can unlock
+            potential in your career, relationships, and personal growth. Dive into our clay-style
+            interactive cards to learn more about the psychology behind the Myers-Briggs Type Indicator.
           </p>
 
           {/* CTA Button */}
@@ -96,23 +116,24 @@ export default function Home() {
       </header>
 
       {/* Bento Grid - 16 Types */}
-      <main className="relative z-10 px-4 pb-20">
+      <main className="relative z-10 px-4 pb-20 grid-container">
         <div className="container mx-auto max-w-5xl">
           <div className="bento-grid">
             {mbtiTypes.map((type) => (
-              <Link
-                to={`/${currentLang}/types/${type}`}
-                key={type}
-                className={`clay-card type-card ${typeColors[type]}`}
-              >
-                <span className="type-card-emoji">
-                  {t(`types.${type}.emoji`)}
-                </span>
-                <span className="type-card-code">{type}</span>
-                <span className="type-card-name">
-                  {t(`types.${type}.name`)}
-                </span>
-              </Link>
+              <article key={type}>
+                <Link
+                  to={`/${currentLang}/types/${type}`}
+                  className={`clay-card type-card ${typeColors[type]}`}
+                >
+                  <span className="type-card-emoji">
+                    {t(`types.${type}.emoji`)}
+                  </span>
+                  <span className="type-card-code">{type}</span>
+                  <span className="type-card-name">
+                    {t(`types.${type}.name`)}
+                  </span>
+                </Link>
+              </article>
             ))}
           </div>
         </div>
