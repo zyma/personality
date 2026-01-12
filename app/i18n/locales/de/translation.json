@@ -1,0 +1,23 @@
+{
+  "welcome": "Willkommen bei MBTI Wiki",
+  "description": "Entdecken Sie Ihren Persönlichkeitstyp und verstehen Sie sich selbst besser.",
+  "selectLanguage": "Sprache auswählen",
+  "types": {
+    "INTJ": "Architekt",
+    "INTP": "Logiker",
+    "ENTJ": "Kommandeur",
+    "ENTP": "Debattierer",
+    "INFJ": "Advokat",
+    "INFP": "Mittler",
+    "ENFJ": "Protagonist",
+    "ENFP": "Aktivist",
+    "ISTJ": "Logistiker",
+    "ISFJ": "Verteidiger",
+    "ESTJ": "Exekutive",
+    "ESFJ": "Konsul",
+    "ISTP": "Virtuose",
+    "ISFP": "Abenteurer",
+    "ESTP": "Unternehmer",
+    "ESFP": "Entertainer"
+  }
+}

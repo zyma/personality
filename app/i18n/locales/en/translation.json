@@ -1,0 +1,23 @@
+{
+  "welcome": "Welcome to MBTI Wiki",
+  "description": "Discover your personality type and understand yourself better.",
+  "selectLanguage": "Select Language",
+  "types": {
+    "INTJ": "Architect",
+    "INTP": "Logician",
+    "ENTJ": "Commander",
+    "ENTP": "Debater",
+    "INFJ": "Advocate",
+    "INFP": "Mediator",
+    "ENFJ": "Protagonist",
+    "ENFP": "Campaigner",
+    "ISTJ": "Logistician",
+    "ISFJ": "Defender",
+    "ESTJ": "Executive",
+    "ESFJ": "Consul",
+    "ISTP": "Virtuoso",
+    "ISFP": "Adventurer",
+    "ESTP": "Entrepreneur",
+    "ESFP": "Performer"
+  }
+}
