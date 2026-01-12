@@ -4,23 +4,32 @@ import "~/styles/clay.css";
 import LanguageSwitcher from "~/components/LanguageSwitcher";
 
 // Type card color assignments
+// Type card color assignments (Semantic Groups)
+// Analysts (Lilac), Diplomats (Mint), Sentinels (Sky), Explorers (Lemon)
 const typeColors: Record<string, { bg: string; dark: string }> = {
+  // Analysts
   INTJ: { bg: "#e2d1f9", dark: "#c9b3e6" },
-  INTP: { bg: "#bde0fe", dark: "#89c4f4" },
-  ENTJ: { bg: "#ffb5a7", dark: "#ff9080" },
-  ENTP: { bg: "#fef3c7", dark: "#fde68a" },
-  INFJ: { bg: "#e2d1f9", dark: "#c9b3e6" },
-  INFP: { bg: "#ffc8dd", dark: "#f9a8c2" },
-  ENFJ: { bg: "#ffd8be", dark: "#ffb088" },
-  ENFP: { bg: "#fef3c7", dark: "#fde68a" },
-  ISTJ: { bg: "#d4e09b", dark: "#c5d17c" },
-  ISFJ: { bg: "#c8f7dc", dark: "#9ee7c0" },
-  ESTJ: { bg: "#ffb5a7", dark: "#ff9080" },
-  ESFJ: { bg: "#ffd8be", dark: "#ffb088" },
-  ISTP: { bg: "#bde0fe", dark: "#89c4f4" },
-  ISFP: { bg: "#ffc8dd", dark: "#f9a8c2" },
-  ESTP: { bg: "#c8f7dc", dark: "#9ee7c0" },
-  ESFP: { bg: "#d4e09b", dark: "#c5d17c" },
+  INTP: { bg: "#e2d1f9", dark: "#c9b3e6" },
+  ENTJ: { bg: "#e2d1f9", dark: "#c9b3e6" },
+  ENTP: { bg: "#e2d1f9", dark: "#c9b3e6" },
+
+  // Diplomats
+  INFJ: { bg: "#c8f7dc", dark: "#9ee7c0" },
+  INFP: { bg: "#c8f7dc", dark: "#9ee7c0" },
+  ENFJ: { bg: "#c8f7dc", dark: "#9ee7c0" },
+  ENFP: { bg: "#c8f7dc", dark: "#9ee7c0" },
+
+  // Sentinels
+  ISTJ: { bg: "#bde0fe", dark: "#89c4f4" },
+  ISFJ: { bg: "#bde0fe", dark: "#89c4f4" },
+  ESTJ: { bg: "#bde0fe", dark: "#89c4f4" },
+  ESFJ: { bg: "#bde0fe", dark: "#89c4f4" },
+
+  // Explorers
+  ISTP: { bg: "#fef3c7", dark: "#fde68a" },
+  ISFP: { bg: "#fef3c7", dark: "#fde68a" },
+  ESTP: { bg: "#fef3c7", dark: "#fde68a" },
+  ESFP: { bg: "#fef3c7", dark: "#fde68a" },
 };
 
 export default function TypePage() {

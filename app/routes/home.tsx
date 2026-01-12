@@ -3,24 +3,31 @@ import { Link } from "react-router";
 import "~/styles/clay.css";
 import LanguageSwitcher from "~/components/LanguageSwitcher";
 
-// Type card color assignments
+// Type card color assignments (Semantic Groups)
 const typeColors: Record<string, string> = {
+  // Analysts (Lilac)
   INTJ: "clay-card-lavender",
-  INTP: "clay-card-sky",
-  ENTJ: "clay-card-coral",
-  ENTP: "clay-card-lemon",
-  INFJ: "clay-card-lavender",
-  INFP: "clay-card-pink",
-  ENFJ: "clay-card-peach",
-  ENFP: "clay-card-lemon",
-  ISTJ: "clay-card-sage",
-  ISFJ: "clay-card-mint",
-  ESTJ: "clay-card-coral",
-  ESFJ: "clay-card-peach",
-  ISTP: "clay-card-sky",
-  ISFP: "clay-card-pink",
-  ESTP: "clay-card-mint",
-  ESFP: "clay-card-sage",
+  INTP: "clay-card-lavender",
+  ENTJ: "clay-card-lavender",
+  ENTP: "clay-card-lavender",
+
+  // Diplomats (Mint)
+  INFJ: "clay-card-mint",
+  INFP: "clay-card-mint",
+  ENFJ: "clay-card-mint",
+  ENFP: "clay-card-mint",
+
+  // Sentinels (Sky Blue)
+  ISTJ: "clay-card-sky",
+  ISFJ: "clay-card-sky",
+  ESTJ: "clay-card-sky",
+  ESFJ: "clay-card-sky",
+
+  // Explorers (Lemon Yellow)
+  ISTP: "clay-card-lemon",
+  ISFP: "clay-card-lemon",
+  ESTP: "clay-card-lemon",
+  ESFP: "clay-card-lemon",
 };
 
 export default function Home() {
