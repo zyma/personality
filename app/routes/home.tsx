@@ -80,44 +80,89 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <header className="relative z-10 text-center px-6 py-16 md:py-24">
+      {/* Hero Section & Hub */}
+      <header className="relative z-10 text-center px-4 pt-12 pb-8 md:pt-20 md:pb-12">
         <div className="container mx-auto max-w-4xl">
-          {/* Badge */}
-          <div className="inline-block mb-6">
-            <span className="pill-badge">
-              ✨ {t("hero.badge")}
-            </span>
+          <div className="inline-block mb-4">
+            <span className="pill-badge">✨ {t("hero.badge")}</span>
           </div>
-
-          {/* Main Heading */}
-          <h1 className="clay-heading clay-heading-xl mb-6">
-            {t("hero.title")}
-          </h1>
-
-          {/* Subtitle */}
-          <p className="clay-text text-lg md:text-xl max-w-2xl mx-auto mb-6">
+          <h1 className="clay-heading clay-heading-xl mb-4">{t("hero.title")}</h1>
+          <p className="clay-text text-lg md:text-xl max-w-2xl mx-auto mb-8">
             {t("hero.subtitle")}
           </p>
 
-          {/* SEO Content Injection */}
-          <p className="clay-text text-base max-w-3xl mx-auto mb-10 opacity-90">
-            Welcome to the ultimate guide to the <strong>16 MBTI personality types</strong>.
-            Understanding your type—whether you are an <em>Introvert</em> or <em>Extrovert</em>—can unlock
-            potential in your career, relationships, and personal growth. Dive into our clay-style
-            interactive cards to learn more about the psychology behind the Myers-Briggs Type Indicator.
-          </p>
-
-          {/* CTA Button */}
-          <button className="clay-button text-lg">
-            🔮 {t("hero.cta")}
-          </button>
+          {/* Daily Fortune Widget */}
+          <div className="max-w-md mx-auto mb-12">
+            <div className="fortune-widget">
+              <div className="fortune-icon">🔮</div>
+              <div className="fortune-text text-left">
+                <div className="fortune-label">Daily Fortune</div>
+                <div className="fortune-hint">Tap to reveal your vibe today...</div>
+              </div>
+              <div className="text-2xl text-primary opacity-50">➔</div>
+            </div>
+          </div>
         </div>
       </header>
 
-      {/* Bento Grid - 16 Types */}
-      <main className="relative z-10 px-4 pb-20 grid-container">
-        <div className="container mx-auto max-w-5xl">
+      <main className="relative z-10 px-4 pb-20">
+        <div className="container mx-auto max-w-6xl">
+
+          {/* Trending Carousel */}
+          <section className="trending-section">
+            <div className="trending-title">
+              <span>🔥</span> Trending Now
+            </div>
+            <div className="carousel">
+              <div className="carousel-item">
+                <span className="carousel-tag">Fandom</span>
+                <div className="carousel-headline">The Office Drama</div>
+                <div className="carousel-desc">Which character are you?</div>
+              </div>
+              <div className="carousel-item">
+                <span className="carousel-tag">Scenario</span>
+                <div className="carousel-headline">Zombie Apocalypse</div>
+                <div className="carousel-desc">Survival rate: 0%</div>
+              </div>
+              <div className="carousel-item">
+                <span className="carousel-tag">Scenario</span>
+                <div className="carousel-headline">First Date Disaster</div>
+                <div className="carousel-desc">Cringe levels rising...</div>
+              </div>
+            </div>
+          </section>
+
+          {/* Bento Navigation */}
+          <div className="bento-nav">
+            {/* Scenarios - Large Tile */}
+            <Link to={`/${currentLang}/scenarios`} className="bento-tile bento-tile-lg">
+              <div>
+                <div className="bento-tile-icon">🎭</div>
+                <div className="bento-tile-title">Scenarios</div>
+                <div className="bento-tile-desc">See how each type reacts in chaos</div>
+              </div>
+              <div className="text-right opacity-50 font-black text-xl">➔</div>
+            </Link>
+
+            {/* Fandoms - Small Tile */}
+            <Link to={`/${currentLang}/fandoms`} className="bento-tile bento-tile-sm bento-tile-fandoms">
+              <div className="bento-tile-icon" style={{ fontSize: '2rem', marginBottom: '8px' }}>📺</div>
+              <div className="bento-tile-title" style={{ fontSize: '1.25rem' }}>Fandoms</div>
+            </Link>
+
+            {/* Battle Arena - Small Tile */}
+            <div className="bento-tile bento-tile-sm bento-tile-battle">
+              <div className="bento-tile-icon" style={{ fontSize: '2rem', marginBottom: '8px' }}>⚔️</div>
+              <div className="bento-tile-title" style={{ fontSize: '1.25rem' }}>Battle</div>
+            </div>
+          </div>
+
+          {/* Section Divider */}
+          <div className="section-title">
+            <span>Explore All Types</span>
+          </div>
+
+          {/* Classic Grid - 16 Types */}
           <div className="bento-grid">
             {mbtiTypes.map((type) => (
               <article key={type}>
@@ -135,6 +180,15 @@ export default function Home() {
                 </Link>
               </article>
             ))}
+          </div>
+
+          {/* SEO Content */}
+          <div className="mt-16 max-w-3xl mx-auto text-center opacity-80">
+            <p className="clay-text text-sm">
+              Discover the 16 MBTI personality types with a fresh aesthetic.
+              Dive into our clay-style interactive hub to explore psychology,
+              relationships, and pop culture through the Myers-Briggs lens.
+            </p>
           </div>
         </div>
       </main>

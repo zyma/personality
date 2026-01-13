@@ -21,16 +21,31 @@ export async function loader({ request }: { request: Request }) {
         "ISTP", "ISFP", "ESTP", "ESFP"
     ];
 
-    const staticUrls: SitemapUrl[] = [
-        // Homepage
-        { loc: baseUrl, changefreq: "weekly", priority: "1.0" },
-        // Type pages
-        ...mbtiTypes.map(type => ({
-            loc: `${baseUrl}/types/${type}`,
-            changefreq: "monthly",
-            priority: "0.8"
-        }))
-    ];
+    const supportedLanguages = ["en", "es", "de", "fr", "ru"];
+
+    const staticUrls: SitemapUrl[] = [];
+
+    supportedLanguages.forEach(lang => {
+        // Home
+        staticUrls.push({ loc: `${baseUrl}/${lang}`, changefreq: "daily", priority: "1.0" });
+
+        // Feature Hubs
+        staticUrls.push({ loc: `${baseUrl}/${lang}/battle`, changefreq: "monthly", priority: "0.9" });
+        staticUrls.push({ loc: `${baseUrl}/${lang}/scenarios`, changefreq: "weekly", priority: "0.9" });
+        staticUrls.push({ loc: `${baseUrl}/${lang}/fandoms`, changefreq: "weekly", priority: "0.9" });
+
+        // Types
+        mbtiTypes.forEach(type => {
+            staticUrls.push({
+                loc: `${baseUrl}/${lang}/types/${type}`,
+                changefreq: "monthly",
+                priority: "0.8"
+            });
+        });
+    });
+
+    // Add Root (Redirect)
+    staticUrls.push({ loc: baseUrl, changefreq: "daily", priority: "1.0" });
 
     // Dynamic content pages from markdown
     const contentUrls: SitemapUrl[] = pages.map(page => ({
