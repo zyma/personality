@@ -17,67 +17,163 @@
   "types": {
     "INTJ": {
       "name": "Architect",
-      "emoji": "🏗️"
+      "emoji": "🏗️",
+      "vibe": {
+        "korean_title": "The Tired Mastermind",
+        "totem": "🦉",
+        "lucky_item": "Noise-canceling Headphones",
+        "superpower": "Predicting 'I told you so' moments"
+      }
     },
     "INTP": {
       "name": "Logician",
-      "emoji": "🔬"
+      "emoji": "🔬",
+      "vibe": {
+        "korean_title": "Naptime Philosopher",
+        "totem": "🐙",
+        "lucky_item": "Unfinished Projects",
+        "superpower": "Debugging reality"
+      }
     },
     "ENTJ": {
       "name": "Commander",
-      "emoji": "👑"
+      "emoji": "👑",
+      "vibe": {
+        "korean_title": "CEO of Everything",
+        "totem": "🦁",
+        "lucky_item": "Megaphone",
+        "superpower": "Hostile takeover of lunch plans"
+      }
     },
     "ENTP": {
       "name": "Debater",
-      "emoji": "💡"
+      "emoji": "💡",
+      "vibe": {
+        "korean_title": "Chaos Agent",
+        "totem": "🦊",
+        "lucky_item": "Devil's Advocate Badge",
+        "superpower": "Turning any sentence into an argument"
+      }
     },
     "INFJ": {
       "name": "Advocate",
-      "emoji": "🌙"
+      "emoji": "🌙",
+      "vibe": {
+        "korean_title": "Mystic Therapist",
+        "totem": "🦋",
+        "lucky_item": "Crystal Ball",
+        "superpower": "Reading your soul (sorry)"
+      }
     },
     "INFP": {
       "name": "Mediator",
-      "emoji": "🦋"
+      "emoji": "🦋",
+      "vibe": {
+        "korean_title": "Daydream Believer",
+        "totem": "🦌",
+        "lucky_item": "Validation Cookie",
+        "superpower": "Crying beautifully"
+      }
     },
     "ENFJ": {
       "name": "Protagonist",
-      "emoji": "🌟"
+      "emoji": "🌟",
+      "vibe": {
+        "korean_title": "Golden Retriever Energy",
+        "totem": "🐬",
+        "lucky_item": "Friendship Bracelet",
+        "superpower": "Aggressive supportiveness"
+      }
     },
     "ENFP": {
       "name": "Campaigner",
-      "emoji": "🎉"
+      "emoji": "🎉",
+      "vibe": {
+        "korean_title": "Human Glitter",
+        "totem": "🦄",
+        "lucky_item": "Shiny Object",
+        "superpower": "Befriending introverts"
+      }
     },
     "ISTJ": {
       "name": "Logistician",
-      "emoji": "📋"
+      "emoji": "📋",
+      "vibe": {
+        "korean_title": "Spreadsheet Warrior",
+        "totem": "🐝",
+        "lucky_item": "Label Maker",
+        "superpower": "Remembering the due date"
+      }
     },
     "ISFJ": {
       "name": "Defender",
-      "emoji": "🛡️"
+      "emoji": "🛡️",
+      "vibe": {
+        "korean_title": "Secret Guardian",
+        "totem": "🐻",
+        "lucky_item": "Homemade Cookies",
+        "superpower": "Passive-aggressive cleaning"
+      }
     },
     "ESTJ": {
       "name": "Executive",
-      "emoji": "📊"
+      "emoji": "📊",
+      "vibe": {
+        "korean_title": "The Manager",
+        "totem": "🦅",
+        "lucky_item": "Clipboard",
+        "superpower": "Yelling efficiently"
+      }
     },
     "ESFJ": {
       "name": "Consul",
-      "emoji": "🤝"
+      "emoji": "🤝",
+      "vibe": {
+        "korean_title": "Gossip Queen",
+        "totem": "🦚",
+        "lucky_item": "Party Planner",
+        "superpower": "Social network dominance"
+      }
     },
     "ISTP": {
       "name": "Virtuoso",
-      "emoji": "🔧"
+      "emoji": "🔧",
+      "vibe": {
+        "korean_title": "Chill Mechanic",
+        "totem": "🐆",
+        "lucky_item": "Multi-tool",
+        "superpower": "Fixing things with brute force"
+      }
     },
     "ISFP": {
       "name": "Adventurer",
-      "emoji": "🎨"
+      "emoji": "🎨",
+      "vibe": {
+        "korean_title": "Aesthetic Rebel",
+        "totem": "swan",
+        "lucky_item": "Vintage Camera",
+        "superpower": "Vibing silently"
+      }
     },
     "ESTP": {
       "name": "Entrepreneur",
-      "emoji": "🚀"
+      "emoji": "🚀",
+      "vibe": {
+        "korean_title": "Risk Taker",
+        "totem": "🦈",
+        "lucky_item": "Energy Drink",
+        "superpower": "Doing it live"
+      }
     },
     "ESFP": {
       "name": "Performer",
-      "emoji": "🎭"
+      "emoji": "🎭",
+      "vibe": {
+        "korean_title": "Party Starter",
+        "totem": "🦜",
+        "lucky_item": "Karaoke Mic",
+        "superpower": "Never being boring"
+      }
     }
   },
   "brand": {
