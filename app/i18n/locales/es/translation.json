@@ -79,5 +79,33 @@
       "name": "Animador",
       "emoji": "🎭"
     }
+  },
+  "brand": {
+    "title": "MBTI Vibes",
+    "subtitle": "Personalidad y Cultura Pop"
+  },
+  "home": {
+    "choose_type": "Elige tu tipo"
+  },
+  "widgets": {
+    "fortune": {
+      "title": "Fortuna Diaria",
+      "hint": "Toca para revelar..."
+    }
+  },
+  "bento": {
+    "scenario": {
+      "tag": "🔥 ESCENARIO DIARIO",
+      "title": "Apocalipsis\nZombie",
+      "desc": "¿Quién sobrevive? ¿Quién lidera?"
+    },
+    "battle": {
+      "tag": "⚔️ MODO VS",
+      "title": "Arena de\nBatalla"
+    },
+    "fandom": {
+      "tag": "📺 CULTURA POP",
+      "title": "The\nOffice"
+    }
   }
 }

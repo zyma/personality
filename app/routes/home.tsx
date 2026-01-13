@@ -64,130 +64,84 @@ export default function Home() {
         <div className="aurora-blob aurora-blob-4"></div>
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-10 py-6 px-6">
-        <div className="container mx-auto max-w-6xl flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 clay-card flex items-center justify-center" style={{ background: 'linear-gradient(145deg, var(--clay-lavender), var(--clay-lavender-dark))' }}>
-              <span className="text-2xl">🧠</span>
-            </div>
-            <span className="font-black text-2xl" style={{ color: 'var(--text-primary)' }}>MBTI Wiki</span>
-          </div>
-
-          {/* Language Selector */}
-          <LanguageSwitcher />
+      {/* Header: Clean Title + Fortune Widget */}
+      <header className="relative z-10 px-6 py-8 flex items-center justify-between container mx-auto max-w-lg md:max-w-4xl">
+        {/* Left: Site Title */}
+        <div className="flex flex-col">
+          <h1 className="clay-heading text-2xl md:text-3xl leading-none" style={{ color: 'var(--text-primary)' }}>
+            {t("brand.title")}
+          </h1>
+          <span className="clay-text text-sm font-bold opacity-60">{t("brand.subtitle")}</span>
         </div>
-      </nav>
 
-      {/* Hero Section & Hub */}
-      <header className="relative z-10 text-center px-4 pt-12 pb-8 md:pt-20 md:pb-12">
-        <div className="container mx-auto max-w-4xl">
-          <div className="inline-block mb-4">
-            <span className="pill-badge">✨ {t("hero.badge")}</span>
-          </div>
-          <h1 className="clay-heading clay-heading-xl mb-4">{t("hero.title")}</h1>
-          <p className="clay-text text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            {t("hero.subtitle")}
-          </p>
-
-          {/* Daily Fortune Widget */}
-          <div className="max-w-md mx-auto mb-12">
-            <div className="fortune-widget">
-              <div className="fortune-icon">🔮</div>
-              <div className="fortune-text text-left">
-                <div className="fortune-label">Daily Fortune</div>
-                <div className="fortune-hint">Tap to reveal your vibe today...</div>
-              </div>
-              <div className="text-2xl text-primary opacity-50">➔</div>
-            </div>
-          </div>
+        {/* Right: Floating Fortune Cookie */}
+        <div className="clay-card rounded-full w-12 h-12 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+          <span className="text-2xl emoji-pop">🥠</span>
         </div>
       </header>
 
       <main className="relative z-10 px-4 pb-20">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-lg md:max-w-4xl">
 
-          {/* Trending Carousel */}
-          <section className="trending-section">
-            <div className="trending-title">
-              <span>🔥</span> Trending Now
-            </div>
-            <div className="carousel">
-              <div className="carousel-item">
-                <span className="carousel-tag">Fandom</span>
-                <div className="carousel-headline">The Office Drama</div>
-                <div className="carousel-desc">Which character are you?</div>
-              </div>
-              <div className="carousel-item">
-                <span className="carousel-tag">Scenario</span>
-                <div className="carousel-headline">Zombie Apocalypse</div>
-                <div className="carousel-desc">Survival rate: 0%</div>
-              </div>
-              <div className="carousel-item">
-                <span className="carousel-tag">Scenario</span>
-                <div className="carousel-headline">First Date Disaster</div>
-                <div className="carousel-desc">Cringe levels rising...</div>
-              </div>
-            </div>
-          </section>
-
-          {/* Bento Navigation */}
+          {/* Bento Grid */}
           <div className="bento-nav">
             {/* Scenarios - Large Tile */}
             <Link to={`/${currentLang}/scenarios`} className="bento-tile bento-tile-lg">
               <div>
-                <div className="bento-tile-icon">🎭</div>
-                <div className="bento-tile-title">Scenarios</div>
-                <div className="bento-tile-desc">See how each type reacts in chaos</div>
+                <span className="bento-tag">{t("bento.scenario.tag")}</span>
+                <div className="bento-title whitespace-pre-line">{t("bento.scenario.title")}</div>
+                <div className="bento-desc mt-2">{t("bento.scenario.desc")}</div>
               </div>
-              <div className="text-right opacity-50 font-black text-xl">➔</div>
+              <div className="text-right">
+                <span className="bento-emoji">🧟</span>
+              </div>
             </Link>
 
-            {/* Fandoms - Small Tile */}
+            {/* Battle Arena */}
+            <Link to={`/${currentLang}/battle`} className="bento-tile bento-tile-sm bento-tile-battle">
+              <span className="bento-tag">{t("bento.battle.tag")}</span>
+              <div className="flex justify-between items-end">
+                <span className="bento-title text-xl whitespace-pre-line">{t("bento.battle.title")}</span>
+                <span className="bento-emoji text-3xl">🥊</span>
+              </div>
+            </Link>
+
+            {/* Fandoms */}
             <Link to={`/${currentLang}/fandoms`} className="bento-tile bento-tile-sm bento-tile-fandoms">
-              <div className="bento-tile-icon" style={{ fontSize: '2rem', marginBottom: '8px' }}>📺</div>
-              <div className="bento-tile-title" style={{ fontSize: '1.25rem' }}>Fandoms</div>
+              <span className="bento-tag">{t("bento.fandom.tag")}</span>
+              <div className="flex justify-between items-end">
+                <span className="bento-title text-xl whitespace-pre-line">{t("bento.fandom.title")}</span>
+                <span className="bento-emoji text-3xl">☕</span>
+              </div>
             </Link>
-
-            {/* Battle Arena - Small Tile */}
-            <div className="bento-tile bento-tile-sm bento-tile-battle">
-              <div className="bento-tile-icon" style={{ fontSize: '2rem', marginBottom: '8px' }}>⚔️</div>
-              <div className="bento-tile-title" style={{ fontSize: '1.25rem' }}>Battle</div>
-            </div>
           </div>
 
           {/* Section Divider */}
           <div className="section-title">
-            <span>Explore All Types</span>
+            <span>{t("home.choose_type")}</span>
           </div>
 
-          {/* Classic Grid - 16 Types */}
-          <div className="bento-grid">
+          {/* Classic Grid - 16 Types (Vertical Pills) */}
+          <div className="grid grid-cols-4 gap-3 md:gap-4">
             {mbtiTypes.map((type) => (
-              <article key={type}>
-                <Link
-                  to={`/${currentLang}/types/${type}`}
-                  className={`clay-card type-card ${typeColors[type]}`}
-                >
-                  <span className="type-card-emoji">
-                    {t(`types.${type}.emoji`)}
-                  </span>
-                  <span className="type-card-code">{type}</span>
-                  <span className="type-card-name">
-                    {t(`types.${type}.name`)}
-                  </span>
-                </Link>
-              </article>
+              <Link
+                key={type}
+                to={`/${currentLang}/types/${type}`}
+                className="type-card"
+              >
+                <span className="type-card-emoji emoji-pop">
+                  {t(`types.${type}.emoji`)}
+                </span>
+                <span className="type-card-code">{type}</span>
+              </Link>
             ))}
           </div>
 
           {/* SEO Content */}
-          <div className="mt-16 max-w-3xl mx-auto text-center opacity-80">
+          <div className="mt-16 max-w-3xl mx-auto text-center opacity-80 hidden md:block">
             <p className="clay-text text-sm">
               Discover the 16 MBTI personality types with a fresh aesthetic.
-              Dive into our clay-style interactive hub to explore psychology,
-              relationships, and pop culture through the Myers-Briggs lens.
+              Dive into our clay-style interactive hub.
             </p>
           </div>
         </div>

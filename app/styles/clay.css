@@ -3,6 +3,13 @@
    ======================================== */
 
 /* === COLOR TOKENS === */
+/* === GLOBAL RESET & BASICS === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   /* Pastel Card Colors */
   --clay-mint: #c8f7dc;
@@ -24,12 +31,12 @@
   --clay-coral-dark: #ff9080;
   --clay-sage-dark: #c5d17c;
 
-  /* Text Colors - No pure black */
+  /* Text Colors */
   --text-primary: #2d3748;
   --text-secondary: #4a5568;
   --text-muted: #718096;
 
-  /* Background Color updated */
+  /* Background */
   --bg-soft: #F0F4F8;
 
   /* Aurora gradient colors */
@@ -37,6 +44,22 @@
   --aurora-2: rgba(189, 224, 254, 0.4);
   --aurora-3: rgba(226, 209, 249, 0.4);
   --aurora-4: rgba(255, 200, 221, 0.4);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-soft);
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === EMOJI POP EFFECT === */
+.emoji-pop {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transform: translateZ(0);
+  /* Force GPU */
 }
 
 /* === AURORA BACKGROUND === */
@@ -66,7 +89,6 @@
   overflow: hidden;
   z-index: -1;
   background: var(--bg-soft);
-  /* Updated background */
 }
 
 .aurora-blob {
@@ -244,46 +266,88 @@
   }
 }
 
-/* === TYPE CARD CONTENT === */
+/* === TYPE CARD ("VERTICAL PILLS") === */
 .type-card {
-  aspect-ratio: 1;
-  /* Square cards */
+  aspect-ratio: auto;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
   text-decoration: none;
-  gap: 16px;
+  gap: 12px;
   cursor: pointer;
+  border-radius: 50px;
+  /* Pill shape */
+  background: white;
+  /* Clean background */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Floating Emoji at Top */
 .type-card-emoji {
-  font-size: 4rem;
-  /* Large icons */
+  font-size: 2.5rem;
   line-height: 1;
-  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.15));
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .type-card:hover .type-card-emoji {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.2) translateY(-4px);
 }
 
+/* 4-Letter Code */
 .type-card-code {
   font-family: 'Nunito', sans-serif;
   font-weight: 900;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--text-primary);
   letter-spacing: 0.05em;
 }
 
+/* Hide Full Name for Mobile Cleanliness */
 .type-card-name {
+  display: none;
+}
+
+/* === BENTO CARD TYPOGRAPHY === */
+.bento-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
   font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  font-size: 1.125rem;
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  backdrop-filter: blur(4px);
+}
+
+.bento-title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.75rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.bento-desc {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  text-align: center;
+  opacity: 0.8;
+}
+
+/* Update Bento Emoji Size */
+.bento-emoji {
+  font-size: 2.5rem;
+  /* ~40px */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 /* === PUFFY PROGRESS BAR === */

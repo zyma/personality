@@ -79,5 +79,33 @@
       "name": "Performer",
       "emoji": "🎭"
     }
+  },
+  "brand": {
+    "title": "MBTI Vibes",
+    "subtitle": "Personality & Pop Culture"
+  },
+  "home": {
+    "choose_type": "Choose Your Type"
+  },
+  "widgets": {
+    "fortune": {
+      "title": "Daily Fortune",
+      "hint": "Tap to reveal your vibe today..."
+    }
+  },
+  "bento": {
+    "scenario": {
+      "tag": "🔥 DAILY SCENARIO",
+      "title": "Zombie\nApocalypse",
+      "desc": "Who survives? Who leads?"
+    },
+    "battle": {
+      "tag": "⚔️ VS MODE",
+      "title": "Battle\nArena"
+    },
+    "fandom": {
+      "tag": "📺 POP CULTURE",
+      "title": "The\nOffice"
+    }
   }
 }

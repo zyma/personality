@@ -79,5 +79,33 @@
       "name": "Entertainer",
       "emoji": "🎭"
     }
+  },
+  "brand": {
+    "title": "MBTI Vibes",
+    "subtitle": "Persönlichkeit & Popkultur"
+  },
+  "home": {
+    "choose_type": "Wähle deinen Typ"
+  },
+  "widgets": {
+    "fortune": {
+      "title": "Tages-Orakel",
+      "hint": "Tippen zum Enthüllen..."
+    }
+  },
+  "bento": {
+    "scenario": {
+      "tag": "🔥 TÄGLICHES SZENARIO",
+      "title": "Zombie\nApokalypse",
+      "desc": "Wer überlebt? Wer führt?"
+    },
+    "battle": {
+      "tag": "⚔️ VS MODUS",
+      "title": "Battle\nArena"
+    },
+    "fandom": {
+      "tag": "📺 POPKULTUR",
+      "title": "The\nOffice"
+    }
   }
 }
