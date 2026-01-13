@@ -4,6 +4,7 @@ import { getContentPage } from "~/lib/markdown";
 import type { Route } from "./+types/profile";
 import "~/styles/clay.css";
 import LanguageSwitcher from "~/components/LanguageSwitcher";
+import { TYPES_DATA } from "~/data/mock";
 
 // Color definitions for semantic groups
 const groupColors: Record<string, { bg: string; dark: string }> = {
