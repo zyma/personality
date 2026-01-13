@@ -17,87 +17,254 @@
   "types": {
     "INTJ": {
       "name": "Arquitecto",
-      "emoji": "🏗️"
+      "emoji": "🏗️",
+      "vibe": {
+        "korean_title": "El Mente Maestra Cansado",
+        "totem": "🦉",
+        "lucky_item": "Auriculares con cancelación de ruido",
+        "superpower": "Predecir momentos de 'te lo dije'"
+      }
     },
     "INTP": {
       "name": "Lógico",
-      "emoji": "🔬"
+      "emoji": "🔬",
+      "vibe": {
+        "korean_title": "Filósofo de la Siesta",
+        "totem": "🐙",
+        "lucky_item": "Proyectos sin terminar",
+        "superpower": "Depurar la realidad"
+      }
     },
     "ENTJ": {
       "name": "Comandante",
-      "emoji": "👑"
+      "emoji": "👑",
+      "vibe": {
+        "korean_title": "CEO de Todo",
+        "totem": "🦁",
+        "lucky_item": "Megáfono",
+        "superpower": "Toma de posesión hostil"
+      }
     },
     "ENTP": {
       "name": "Innovador",
-      "emoji": "💡"
+      "emoji": "💡",
+      "vibe": {
+        "korean_title": "Agente del Caos",
+        "totem": " foxes",
+        "lucky_item": "Placa",
+        "superpower": "Ganar discusiones"
+      }
     },
     "INFJ": {
       "name": "Abogado",
-      "emoji": "🌙"
+      "emoji": "🌙",
+      "vibe": {
+        "korean_title": "Terapeuta Místico",
+        "totem": "🦋",
+        "lucky_item": "Bola de cristal",
+        "superpower": "Lectura de almas"
+      }
     },
     "INFP": {
       "name": "Mediador",
-      "emoji": "🦋"
+      "emoji": "🦋",
+      "vibe": {
+        "korean_title": "Creyente de Sueños",
+        "totem": "🦌",
+        "lucky_item": "Galleta",
+        "superpower": "Llorar bellamente"
+      }
     },
     "ENFJ": {
       "name": "Protagonista",
-      "emoji": "🌟"
+      "emoji": "🌟",
+      "vibe": {
+        "korean_title": "Golden Retriever",
+        "totem": "🐬",
+        "lucky_item": "Pulsera",
+        "superpower": "Apoyo incondicional"
+      }
     },
     "ENFP": {
       "name": "Activista",
-      "emoji": "🎉"
+      "emoji": "🎉",
+      "vibe": {
+        "korean_title": "Purpurina Humana",
+        "totem": "🦄",
+        "lucky_item": "Objeto brillante",
+        "superpower": "Hacerse amigo de introvertidos"
+      }
     },
     "ISTJ": {
       "name": "Logístico",
-      "emoji": "📋"
+      "emoji": "📋",
+      "vibe": {
+        "korean_title": "Guerrero de Hojas de Cálculo",
+        "totem": "🐝",
+        "lucky_item": "Etiquetadora",
+        "superpower": "Plazos de entrega"
+      }
     },
     "ISFJ": {
       "name": "Defensor",
-      "emoji": "🛡️"
+      "emoji": "🛡️",
+      "vibe": {
+        "korean_title": "Guardián Secreto",
+        "totem": "🐻",
+        "lucky_item": "Galletas",
+        "superpower": "Limpieza"
+      }
     },
     "ESTJ": {
       "name": "Ejecutivo",
-      "emoji": "📊"
+      "emoji": "📊",
+      "vibe": {
+        "korean_title": "El Gerente",
+        "totem": "🦅",
+        "lucky_item": "Portapapeles",
+        "superpower": "Gritar"
+      }
     },
     "ESFJ": {
       "name": "Cónsul",
-      "emoji": "🤝"
+      "emoji": "🤝",
+      "vibe": {
+        "korean_title": "Reina del Cotilleo",
+        "totem": "🦚",
+        "lucky_item": "Planificador de fiestas",
+        "superpower": "Dominio social"
+      }
     },
     "ISTP": {
       "name": "Virtuoso",
-      "emoji": "🔧"
+      "emoji": "🔧",
+      "vibe": {
+        "korean_title": "Mecánico Relajado",
+        "totem": "🐆",
+        "lucky_item": "Multi-herramienta",
+        "superpower": "Fuerza bruta"
+      }
     },
     "ISFP": {
       "name": "Aventurero",
-      "emoji": "🎨"
+      "emoji": "🎨",
+      "vibe": {
+        "korean_title": "Rebelde Estético",
+        "totem": "🦢",
+        "lucky_item": "Cámara",
+        "superpower": "Vibrar"
+      }
     },
     "ESTP": {
       "name": "Emprendedor",
-      "emoji": "🚀"
+      "emoji": "🚀",
+      "vibe": {
+        "korean_title": "Tomador de Riesgos",
+        "totem": "🦈",
+        "lucky_item": "Bebida energética",
+        "superpower": "Hacerlo en vivo"
+      }
     },
     "ESFP": {
       "name": "Animador",
-      "emoji": "🎭"
+      "emoji": "🎭",
+      "vibe": {
+        "korean_title": "Alma de la Fiesta",
+        "totem": "🦜",
+        "lucky_item": "Micrófono",
+        "superpower": "Entretenimiento"
+      }
     }
   },
-  "brand": {
-    "title": "MBTI Vibes",
-    "subtitle": "Personalidad y Cultura Pop"
+  "common": {
+    "back": "Atrás",
+    "back_to_hub": "Volver al Hub",
+    "coming_soon": "Próximamente",
+    "locked": "Bloqueado 🔒",
+    "mystery": "Misterio"
+  },
+  "capsule": {
+    "title": "Máquina de Cápsulas MBTI",
+    "spin_btn": "GIRAR (Diario)",
+    "spinning": "Girando...",
+    "try_again": "Vuelve mañana",
+    "prizes": {
+      "clover": {
+        "name": "Trébol de la Suerte",
+        "desc": "Tu próxima decisión será perfecta."
+      },
+      "gem": {
+        "name": "Gema Rara",
+        "desc": "Encontrarás algo valioso hoy."
+      },
+      "treat": {
+        "name": "Dulce Regalo",
+        "desc": "¡Date un capricho!"
+      },
+      "rocket": {
+        "name": "Cohete Veloz",
+        "desc": "Terminarás tus tareas más rápido."
+      },
+      "rainbow": {
+        "name": "Arcoíris",
+        "desc": "Viene una sorpresa positiva."
+      }
+    }
+  },
+  "dashboard": {
+    "spirit_animal": "ANIMAL ESPIRITUAL",
+    "lucky_item": "OBJETO DE SUERTE",
+    "aesthetic": "ESTÉTICA",
+    "superpower": "SUPERPODER",
+    "soulmate_title": "Alma Gemela de Hoy",
+    "from_universe": "del Universo {{universe}}",
+    "how_survives": "Cómo {{type}} Sobrevive...",
+    "bars_title": "Barras de Características",
+    "room_title": "Sala de Personalidad Virtual",
+    "room_desc": "Personaliza tu espacio y avatar. ¡Desbloquea decoraciones explorando fandoms!",
+    "traits": {
+      "introversion": "Introversión",
+      "extraversion": "Extraversión",
+      "sensing": "Sensación",
+      "intuition": "Intuición",
+      "thinking": "Pensamiento",
+      "feeling": "Sentimiento",
+      "judging": "Juicio",
+      "perceiving": "Percepción"
+    }
   },
   "home": {
-    "choose_type": "Elige tu tipo"
+    "title": "MBTI Vibes",
+    "subtitle": "Universo Soft Pop",
+    "choose_type": "Elige tu tipo",
+    "scenario_tag": "🔥 Escenario del Día",
+    "read_more": "Leer reacciones ➔",
+    "vs_mode_tag": "⚔️ MODO VS",
+    "fandom_tag": "📺 FANDOM",
+    "capsule_tag": "Máquina de Cápsulas",
+    "fortunes": [
+      "Hoy es un buen día para vibrar.",
+      "Evita las hojas de cálculo hoy.",
+      "Tu flechazo lo sabe.",
+      "Compra los zapatos."
+    ]
+  },
+  "scenarios": {
+    "more": "Más Escenarios"
+  },
+  "fandoms": {
+    "also_trending": "También en Tendencia"
   },
   "widgets": {
     "fortune": {
       "title": "Fortuna Diaria",
-      "hint": "Toca para revelar..."
+      "hint": "Toca para revelar tu vibra..."
     }
   },
   "bento": {
     "scenario": {
       "tag": "🔥 ESCENARIO DIARIO",
-      "title": "Apocalipsis\nZombie",
-      "desc": "¿Quién sobrevive? ¿Quién lidera?"
+      "title": "Hub de\nEscenarios"
     },
     "battle": {
       "tag": "⚔️ MODO VS",
@@ -105,7 +272,7 @@
     },
     "fandom": {
       "tag": "📺 CULTURA POP",
-      "title": "The\nOffice"
+      "title": "Base de\nFandoms"
     }
   }
 }

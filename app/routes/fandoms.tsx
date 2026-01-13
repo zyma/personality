@@ -7,12 +7,16 @@ import type { Route } from "./+types/fandoms";
 
 export const meta: Route.MetaFunction = () => {
     return [
-        { title: "Pop Culture Types | MBTI Vibes" },
-        { name: "description", content: "MBTI types of your favorite characters." },
+        { title: "Pop Culture MBTI Database | Fandom Vibes" },
+        { name: "description", content: "Discover the MBTI types of characters from Harry Potter, The Office, and more. Find your fictional soulmate!" },
+        { property: "og:title", content: "Fandom MBTI Database: Who matches your vibe?" },
+        { property: "og:description", content: "Explore character personalities in a Soft Pop universe." },
+        { property: "og:image", content: "/og-image-fandoms.png" },
     ];
 };
 
 export default function Fandoms() {
+    const { t } = useTranslation();
     const { lang } = useParams();
 
     // Prototype: Just showing "Harry Potter" fully expanded
@@ -54,7 +58,7 @@ export default function Fandoms() {
                             return (
                                 <Link to={`/${lang}/types/${char.type}`} key={i} className="clay-card p-4 flex flex-col items-center text-center hover:scale-105 transition-transform group">
                                     <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-3xl mb-3 shadow-inner group-hover:bg-purple-100 transition-colors">
-                                        {typeInfo?.totem || "👤"}
+                                        {typeInfo?.totem || t(`types.${char.type}.vibe.totem`)}
                                     </div>
                                     <h3 className="font-bold text-slate-800 leading-tight mb-1">{char.name}</h3>
                                     <span className="bg-slate-200 text-slate-600 text-[10px] font-black px-2 py-0.5 rounded-full">
@@ -67,10 +71,10 @@ export default function Fandoms() {
 
                     {/* Other Fandoms (Locked) */}
                     <div className="mt-12 opacity-50">
-                        <h3 className="text-xl font-bold text-slate-400 mb-4 px-2 uppercase tracking-widest">Also Trending</h3>
+                        <h3 className="text-xl font-bold text-slate-400 mb-4 px-2 uppercase tracking-widest">{t("fandoms.also_trending")}</h3>
                         <div className="clay-card p-4 flex items-center gap-4 grayscale">
                             <div className="text-3xl">☕</div>
-                            <div className="font-bold text-slate-500">The Office (Coming Soon)</div>
+                            <div className="font-bold text-slate-500">{t("bento.fandom.title")} ({t("common.coming_soon")})</div>
                         </div>
                     </div>
 

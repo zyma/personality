@@ -7,12 +7,16 @@ import type { Route } from "./+types/scenarios";
 
 export const meta: Route.MetaFunction = () => {
     return [
-        { title: "Scenarios: How Types React | MBTI Vibes" },
-        { name: "description", content: "Funny scenarios and how each MBTI type handles them." },
+        { title: "Daily MBTI Scenarios | Soft Pop React" },
+        { name: "description", content: "What would an INTJ do in a zombie apocalypse? See how every type handles crazy situations." },
+        { property: "og:title", content: "MBTI Scenarios: How would you react?" },
+        { property: "og:description", content: "From zombie survival to first dates - see the MBTI breakdown." },
+        { property: "og:image", content: "/og-image-scenarios.png" },
     ];
 };
 
 export default function Scenarios() {
+    const { t } = useTranslation();
     const { lang } = useParams();
 
     // Prototype: Just showing the first scenario fully expanded
@@ -41,7 +45,7 @@ export default function Scenarios() {
                     {/* Header */}
                     <div className="text-center mb-10">
                         <span className="bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-sm font-black uppercase tracking-wider inline-block mb-4">
-                            🔥 Scenario of the Day
+                            {t("home.scenario_tag")}
                         </span>
                         <h1 className="text-4xl md:text-5xl font-black text-slate-800 mb-2">
                             {scenario.title}
@@ -61,7 +65,7 @@ export default function Scenarios() {
 
                                     {/* Avatar Left */}
                                     <Link to={`/${lang}/types/${reaction.type}`} className="flex-shrink-0 w-16 h-16 rounded-2xl bg-white flex flex-col items-center justify-center shadow-inner">
-                                        <span className="text-3xl emoji-pop">{typeData?.totem || "👤"}</span>
+                                        <span className="text-3xl emoji-pop">{typeData?.totem || t(`types.${reaction.type}.vibe.totem`)}</span>
                                         <span className="text-[10px] font-black text-slate-400 mt-1">{reaction.type}</span>
                                     </Link>
 
@@ -79,12 +83,12 @@ export default function Scenarios() {
 
                     {/* Other Scenarios Link */}
                     <div className="mt-12">
-                        <h3 className="text-xl font-black text-slate-800 mb-4 px-2">More Scenarios</h3>
+                        <h3 className="text-xl font-black text-slate-800 mb-4 px-2">{t("scenarios.more")}</h3>
                         <div className="grid gap-4">
                             {otherScenarios.map((s) => (
                                 <div key={s.id} className="clay-card p-4 flex justify-between items-center opacity-60 hover:opacity-100 transition-opacity cursor-not-allowed">
                                     <span className="font-bold text-slate-700">{s.title}</span>
-                                    <span className="text-xs bg-slate-200 px-2 py-1 rounded">Locked 🔒</span>
+                                    <span className="text-xs bg-slate-200 px-2 py-1 rounded">{t("common.locked")}</span>
                                 </div>
                             ))}
                         </div>

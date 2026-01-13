@@ -11,39 +11,42 @@
 }
 
 :root {
-  /* Pastel Card Colors */
-  --clay-mint: #c8f7dc;
-  --clay-peach: #ffd8be;
-  --clay-sky: #bde0fe;
-  --clay-lavender: #e2d1f9;
-  --clay-lemon: #fef3c7;
-  --clay-pink: #ffc8dd;
-  --clay-coral: #ffb5a7;
-  --clay-sage: #d4e09b;
-
-  /* Dark variants for depth */
-  --clay-mint-dark: #9ee7c0;
-  --clay-peach-dark: #ffb088;
-  --clay-sky-dark: #89c4f4;
-  --clay-lavender-dark: #c9b3e6;
-  --clay-lemon-dark: #fde68a;
-  --clay-pink-dark: #f9a8c2;
-  --clay-coral-dark: #ff9080;
-  --clay-sage-dark: #c5d17c;
-
-  /* Text Colors */
-  --text-primary: #2d3748;
-  --text-secondary: #4a5568;
+  /* SOFT POP PALETTE 2.0 */
+  --bg-soft: #F0F4F8;
+  --text-primary: #2D3748;
+  --text-secondary: #4A5568;
   --text-muted: #718096;
 
-  /* Background */
-  --bg-soft: #F0F4F8;
+  /* Pastel Card Colors */
+  --clay-mint: #C6F6D5;
+  --clay-peach: #FEEBC8;
+  --clay-sky: #BEE3F8;
+  --clay-lavender: #E9D8FD;
+  --clay-lemon: #FAF089;
+  --clay-pink: #FED7E2;
+  --clay-coral: #FBD5D5;
+  --clay-sage: #E2E8F0;
+
+  /* Dark variants for depth */
+  --clay-mint-dark: #9AE6B4;
+  --clay-peach-dark: #FBD38D;
+  --clay-sky-dark: #90CDF4;
+  --clay-lavender-dark: #D6BCFA;
+  --clay-lemon-dark: #F6E05E;
+  --clay-pink-dark: #F687B3;
+  --clay-coral-dark: #FEB2B2;
+  --clay-sage-dark: #CBD5E0;
+
+  /* Dimensions & Radius */
+  --radius-card: 32px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
 
   /* Aurora gradient colors */
-  --aurora-1: rgba(200, 247, 220, 0.4);
-  --aurora-2: rgba(189, 224, 254, 0.4);
-  --aurora-3: rgba(226, 209, 249, 0.4);
-  --aurora-4: rgba(255, 200, 221, 0.4);
+  --aurora-1: rgba(198, 246, 213, 0.4);
+  --aurora-2: rgba(190, 227, 248, 0.4);
+  --aurora-3: rgba(233, 216, 253, 0.4);
+  --aurora-4: rgba(254, 215, 226, 0.4);
 }
 
 body {
@@ -53,6 +56,7 @@ body {
   font-family: 'Nunito', sans-serif;
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* === EMOJI POP EFFECT === */
@@ -151,61 +155,57 @@ body {
   font-weight: 800;
   font-size: 1.125rem;
   color: var(--text-primary);
-  background: linear-gradient(145deg, #ffd8be, #ffb088);
+  background: linear-gradient(145deg, var(--clay-peach), var(--clay-peach-dark));
   border: none;
-  border-radius: 50px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   box-shadow:
-    6px 6px 12px rgba(163, 177, 198, 0.4),
-    -6px -6px 12px rgba(255, 255, 255, 0.8);
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    6px 6px 12px rgba(166, 180, 200, 0.4),
+    -6px -6px 12px rgba(255, 255, 255, 1);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .clay-button:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-4px) scale(1.04);
   box-shadow:
-    8px 8px 16px rgba(163, 177, 198, 0.5),
-    -8px -8px 16px rgba(255, 255, 255, 0.9);
+    10px 10px 20px rgba(166, 180, 200, 0.5),
+    -10px -10px 20px rgba(255, 255, 255, 1);
 }
 
 .clay-button:active {
-  transform: translateY(1px) scale(0.98);
+  transform: translateY(2px) scale(0.96);
   box-shadow:
-    inset 4px 4px 8px rgba(163, 177, 198, 0.2),
-    inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+    inset 4px 4px 8px rgba(166, 180, 200, 0.3),
+    inset -4px -4px 12px rgba(255, 255, 255, 1);
 }
 
 /* Clay Card Specification */
-/* Clay Card Specification - SOFT POP UPDATE */
+/* Clay Card Specification - SOFT POP UPDATE 2.0 */
 .clay-card {
   position: relative;
   background: #F0F4F8;
-  /* Light blue-grey tint per spec */
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   /* Soft Pop Shadows */
   box-shadow:
     -10px -10px 20px #FFFFFF,
     10px 10px 20px #D1D9E6;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  /* Subtle highlight border */
 }
 
 .clay-card:hover {
-  transform: translateY(-5px);
-  /* Lift up effect */
+  transform: translateY(-8px) scale(1.01);
   box-shadow:
-    -12px -12px 24px #FFFFFF,
-    12px 12px 24px #C0C8D9;
+    -15px -15px 30px #FFFFFF,
+    15px 15px 30px #C0C8D9;
 }
 
 .clay-card:active {
-  transform: scale(0.98);
-  /* Press down effect */
+  transform: scale(0.97);
   box-shadow:
-    inset 6px 6px 12px #D1D9E6,
-    inset -6px -6px 12px #FFFFFF;
+    inset 8px 8px 16px #D1D9E6,
+    inset -8px -8px 16px #FFFFFF;
   transition: all 0.1s ease-out;
 }
 
@@ -287,11 +287,9 @@ body {
   text-decoration: none;
   gap: 12px;
   cursor: pointer;
-  border-radius: 50px;
-  /* Pill shape */
+  border-radius: var(--radius-pill);
   background: white;
-  /* Clean background */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
 
 /* Floating Emoji at Top */
@@ -736,4 +734,67 @@ body {
   width: 40px;
   background: linear-gradient(90deg, transparent, var(--clay-lavender), transparent);
   border-radius: 2px;
+}
+
+/* === EXTRA ANIMATIONS === */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 1s linear infinite;
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }

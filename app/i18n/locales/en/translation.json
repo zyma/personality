@@ -176,12 +176,84 @@
       }
     }
   },
-  "brand": {
-    "title": "MBTI Vibes",
-    "subtitle": "Personality & Pop Culture"
+  "common": {
+    "back": "Back",
+    "back_to_hub": "Back to Hub",
+    "coming_soon": "Coming Soon",
+    "locked": "Locked 🔒",
+    "mystery": "Mystery"
+  },
+  "capsule": {
+    "title": "MBTI Capsule Machine",
+    "spin_btn": "SPIN (Daily)",
+    "spinning": "Spinning...",
+    "try_again": "Try again tomorrow",
+    "prizes": {
+      "clover": {
+        "name": "Lucky Clover",
+        "desc": "Your next decision will be perfect."
+      },
+      "gem": {
+        "name": "Rare Gem",
+        "desc": "You'll find something valuable today."
+      },
+      "treat": {
+        "name": "Sweet Treat",
+        "desc": "Treat yourself to something nice!"
+      },
+      "rocket": {
+        "name": "Speed Rocket",
+        "desc": "You'll finish your task faster."
+      },
+      "rainbow": {
+        "name": "Rainbow",
+        "desc": "A positive surprise is coming."
+      }
+    }
+  },
+  "dashboard": {
+    "spirit_animal": "SPIRIT ANIMAL",
+    "lucky_item": "LUCKY ITEM",
+    "aesthetic": "AESTHETIC",
+    "superpower": "SUPERPOWER",
+    "soulmate_title": "Today's Soulmate",
+    "from_universe": "from {{universe}} Universe",
+    "how_survives": "How {{type}} Survives...",
+    "bars_title": "Characteristic Bars",
+    "room_title": "Virtual Personality Room",
+    "room_desc": "Customize your space and avatar. Unlock decorations by exploring fandoms!",
+    "traits": {
+      "introversion": "Introversion",
+      "extraversion": "Extraversion",
+      "sensing": "Sensing",
+      "intuition": "Intuition",
+      "thinking": "Thinking",
+      "feeling": "Feeling",
+      "judging": "Judging",
+      "perceiving": "Perceiving"
+    }
   },
   "home": {
-    "choose_type": "Choose Your Type"
+    "title": "MBTI Vibes",
+    "subtitle": "Soft Pop Universe",
+    "choose_type": "Choose Your Type",
+    "scenario_tag": "🔥 Scenario of the Day",
+    "read_more": "Read reactions ➔",
+    "vs_mode_tag": "⚔️ VS MODE",
+    "fandom_tag": "📺 FANDOM",
+    "capsule_tag": "Capsule Machine",
+    "fortunes": [
+      "Today is a good day to vibe.",
+      "Avoid spreadsheets today.",
+      "Your crush knows.",
+      "Buy the shoes."
+    ]
+  },
+  "scenarios": {
+    "more": "More Scenarios"
+  },
+  "fandoms": {
+    "also_trending": "Also Trending"
   },
   "widgets": {
     "fortune": {
@@ -192,8 +264,7 @@
   "bento": {
     "scenario": {
       "tag": "🔥 DAILY SCENARIO",
-      "title": "Zombie\nApocalypse",
-      "desc": "Who survives? Who leads?"
+      "title": "Scenario\nHub"
     },
     "battle": {
       "tag": "⚔️ VS MODE",
@@ -201,7 +272,7 @@
     },
     "fandom": {
       "tag": "📺 POP CULTURE",
-      "title": "The\nOffice"
+      "title": "Fandom\nDatabase"
     }
   }
 }
